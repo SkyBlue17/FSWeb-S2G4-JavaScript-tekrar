@@ -158,6 +158,31 @@ siralisayilar = besyuzdenkucuksayilar.sort(function(a,b){return a-b});
 // 3f çözümü
 
 /* kodlar buraya */
+ tekraredensayilar = [];
+
+let tekrarEdenSayilar = {};
+
+// Her sayının kaç kere tekrar ettiğini bulma
+sayilar.forEach(sayi => {
+    if (tekrarEdenSayilar[sayi]) {
+        tekrarEdenSayilar[sayi]++;
+    } else {
+        tekrarEdenSayilar[sayi] = 1;
+    }
+});
+
+// Tekrar edilen sayıları ve tekrar sayısını içeren nesneleri diziye ekleme
+for (let sayi in tekrarEdenSayilar) {
+    if (tekrarEdenSayilar[sayi] > 1) {
+        let tekrarEdenSayiNesnesi = {
+            sayi: sayi,
+            tekrarSayisi: tekrarEdenSayilar[sayi]
+        };
+        tekraredensayilar.push(`${sayi} sayısı ${tekrarEdenSayilar[sayi]} kere tekrar edilmiştir`);
+    }
+}
+
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
