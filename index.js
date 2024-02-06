@@ -107,10 +107,10 @@ let ucetambolunenler,
 /* kodlar buraya */
 
 enbuyuk = sayilar[0];
-enkucuk = 0;
-for(let sayi in sayilar){
-if(enkucuk>sayi){
-  enkucuk=sayi;
+enkucuk = sayilar[0];
+for(let a = 1;a<sayilar.length;a++){
+if(enkucuk>sayilar[a]){
+  enkucuk=sayilar[a];
 }
 }
 for(let i = 1;i<sayilar.length;i++){
@@ -124,26 +124,36 @@ for(let i = 1;i<sayilar.length;i++){
 // 3b çözümü:
 
 /* kodlar buraya */
-let uceTamBolunenler = [];
-function uceTamBolunenlerBulma(item){
+ucetambolunenler=[];
+function ucetambolunenlerbulma(item){
   if(item % 3 ===0){
-    uceTamBolunenler.push(item);
+    ucetambolunenler.push(item);
   }
 }
-sayilar.forEach(uceTamBolunenlerBulma);
+sayilar.forEach(ucetambolunenlerbulma);
+console.log(ucetambolunenler);
 
 
 // 3c çözümü:
-
+ucebolunenlerintoplami = ucetambolunenler.reduce(getSum = (total,num)=>{
+  return total + num
+},0);
+console.log(ucebolunenlerintoplami);
 
 
 // 3d çözümü
 
 /* kodlar buraya */
+besyuzdenkucuksayilar = [];
+besyuzdenkucuksayilar = sayilar.filter(checkNum= (num)=>{
+  return num < 500;
+})
+console.log(besyuzdenkucuksayilar)
 
 // 3e çözümü
 
 /* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort(function(a,b){return a-b});
 
 // 3f çözümü
 
